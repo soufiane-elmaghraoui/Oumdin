@@ -1,0 +1,181 @@
+<div class="container-fluid">
+    <div class="py-5 text-center">
+        <h2>شهادة تنقل استثنائية</h2>
+    </div>
+
+    <!-- <div class="container"> -->
+
+    <div class="row">
+        <div class="col-md-6 p-1">
+            <form id="formId" (ngSubmit)="submit()">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">الاسم العائلي</label>
+                        <input type="text" class="form-control" [(ngModel)]="service.docCovid.nom" name="nom" id="nom" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">الاسم الشخصي </label>
+                        <input type="text" class="form-control" [(ngModel)]="service.docCovid.prenom" id="prenom" name="prenom" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="address">رقم البطاقة الوطنية للتعريف</label>
+                        <input type="text" class="form-control" [(ngModel)]="service.docCovid.cin" id="cin" name="cin" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="address">الجهة</label>
+                        <input type="text" class="form-control" [(ngModel)]="service.docCovid.region" id="region" name="region" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="address">عمالة / إقليم </label>
+                        <input type="text" class="form-control" [(ngModel)]="service.docCovid.province" id="province" name="province" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="address">رقم </label>
+                        <input type="text" class="form-control" [(ngModel)]="service.docCovid.numero" id="numero" name="numero" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="address">التاريخ </label>
+                        <input type="text" class="form-control"  id="date" name="date" />
+                    </div>
+                    <!-- <div class="col-md-6 mb-3">
+                            {{ service.docCovid.numero }}
+                            [(ngModel)]="service.docCovid.date"
+                        </div> -->
+
+                    <!-- <fieldset class="form-group col-md-6 mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">الجنس</legend>
+                        <div class="col-sm-10">
+                            <div class="container">
+                                <div class="form-check custom-control">
+                                    <input class="form-check-input" type="radio" name="homme" id="homme" value="homme" checked />
+                                    <label class="form-check-label" for="homme">
+                                        ذكر
+                                    </label>
+                                </div>
+                                <div class="form-check custom-control">
+                                    <input class="form-check-input" type="radio" name="femme" id="femme" value="femme" />
+                                    <label class="form-check-label" for="femme">
+                                        أنثى
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset> -->
+
+                    <div class="col-md-12 mb-3">
+                        <label for="address2">العنوان</label>
+                        <input type="text" class="form-control" [(ngModel)]="service.docCovid.address" id="address" name="address" />
+                    </div>
+
+                    <div class="container">
+                        <legend class="col-form-label col-sm-2 pt-0">الغرض</legend>
+                        <div class="form-check custom-control">
+                            <input class="form-check-input" type="checkbox" value="" id="save-info" />
+                            <label class="form-check-label" for="save-info">
+                                تنقل للعمل؛
+                            </label>
+                        </div>
+                        <div class="form-check custom-control">
+                            <input class="form-check-input" type="checkbox" value="" id="save-info" />
+                            <label class="form-check-label" for="save-info">
+                                تنقل من أجل اقتناء المشتريات الضرورية للمعيش اليومي في محيط مقر سكني؛
+                            </label>
+                        </div>
+                        <div class="form-check custom-control">
+                            <input class="form-check-input" type="checkbox" value="" id="save-info" />
+                            <label class="form-check-label" for="save-info">
+                                تتنقل من أجل العلاج؛
+                            </label>
+                        </div>
+                        <div class="form-check custom-control">
+                            <input class="form-check-input" type="checkbox" value="" id="save-info" />
+                            <label class="form-check-label" for="save-info">
+                                تنقل من أجل اقتناء الأدوية؛
+                            </label>
+                        </div>
+                        <div class="form-check custom-control">
+                            <input class="form-check-input" type="checkbox" value="" id="save-info" />
+                            <label class="form-check-label" for="save-info">
+                                تنقل من أجل غاية ملحة؛
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <button class="btn btn-primary" type="submit" aria-current="page">Imprimer</button>
+
+            </form>
+        </div>
+
+        <div class="col-md-6 border p-4 bg-light w-100">
+            <div class="">
+                <div class="float-right">
+                    <h6 class="text-center">
+                        المملكة المغربية
+                        <br />
+                        وزارة الداخلية
+                    </h6>
+                </div>
+                <div class="float-left">
+                    <b class="h6"> التاريخ : </b> .................................
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="text-left">
+                    <b>جهة : </b>
+                    {{ service.docCovid.region }}
+                    <br />
+
+                    <b>عمالة / إقليم : </b>
+                    {{ service.docCovid.province }}
+                    <br />
+
+                    <b>رقم : </b> 
+                    {{ service.docCovid.numero }}
+                    <br />
+                </div>
+                <br />
+                <p class="text-center h4">
+                    <ins>شهادة تنقل استثنائية </ins>
+                </p>
+                <br />
+                <br>
+                <div class="text-left">
+                    <p>أنا الموقع (ة) أسفله</p>
+                        
+                        <b>السيد (ة) : </b>
+                        {{ service.docCovid.nom }} {{ service.docCovid.prenom }}
+                        <br />
+                    
+                        <b>رقم البطاقة الوطنية للتعريف اإللكترونية : </b>
+                        {{ service.docCovid.cin }}
+                        <br />
+                    
+                        <b>العنوان : </b>
+                        {{ service.docCovid.address }}
+                        <br>
+                </div>
+                <br />
+                <p class="text-left">
+                    أشهد أن تنقلي خارج المسكن تفرضه الضرورة المشار إليها أسفله
+                    <u>(ضع عالمة على الخانة المناسبة)</u>:
+                </p>
+                <br />
+                <div class="pt-10">
+                    <div class="float-right">
+                        <h6 class="text-center"><u> إمضاء صاحب الشهادة</u> :</h6>
+                    </div>
+                    <div class="float-left">
+                        <h6 class="text-center"><u> إمضاء العون المراقب</u> :</h6>
+                    </div>
+                </div>
+                <hr class="mt-5 mb-2" />
+                <p class="text-left">
+                    (*) بعد موافقة العون المراقب
+                </p>
+            </div>
+        </div>
+
+        <!-- </div>  -->
+    </div>
+</div>
